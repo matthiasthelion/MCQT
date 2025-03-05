@@ -6,7 +6,7 @@
     <title>Hệ Thống Thi Trắc Nghiệm</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Roboto, sans-serif;
             max-width: 800px;
             margin: auto;
             padding: 20px;
@@ -20,7 +20,7 @@
     <form id="user-form">
         <label>Họ và Tên: <input type="text" id="name" required></label><br>
         <label>Ngày sinh: <input type="date" id="dob" required></label><br>
-        <label>Mã sinh viên: <input type="text" id="student-id" required></label><br>
+        <label>Số báo danh: <input type="text" id="student-id" required></label><br>
         <label>Lớp: <input type="text" id="class" required></label><br>
         <button type="submit">Bắt đầu làm bài</button>
     </form>
@@ -56,14 +56,14 @@
                                      <label><input type='radio' name='q${i}' value='false'> Sai</label>`;
                 } else if (group === 2) {
                     for (let j = 1; j <= 4; j++) {
-                        questionsHTML += `<label><input type='radio' name='q${i}' value='${j}'> Đáp án ${j}</label>`;
+                        questionsHTML += `<label><input type='radio' name='q${i}' value='${j}'> ${j}</label>`;
                     }
                 } else if (group === 3) {
                     for (let j = 1; j <= 4; j++) {
-                        questionsHTML += `<label><input type='checkbox' name='q${i}' value='${j}'> Đáp án ${j}</label>`;
+                        questionsHTML += `<label><input type='checkbox' name='q${i}' value='${j}'> ${j}</label>`;
                     }
                 } else {
-                    questionsHTML += `<textarea name='q${i}' rows='2' cols='50'></textarea>`;
+                    questionsHTML += `<textarea name='q${i}' rows='1' cols='50'></textarea>`;
                 }
                 questionsHTML += "</div>";
             }
@@ -74,7 +74,7 @@
             event.preventDefault();
 document.getElementById("quiz").classList.add("hidden");
             document.getElementById("result").classList.remove("hidden");
-            document.getElementById("score").textContent = "Bài làm đã được nộp. (Chấm điểm tự động sẽ được thêm sau)";
+            document.getElementById("score").textContent = "Nộp bài thành công. Kết quả sẽ được gửi tới bạn sau 03 ngày.";
         });
     </script>
 </body>
